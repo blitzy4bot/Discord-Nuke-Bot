@@ -318,7 +318,7 @@ async def on_ready():
         while True:
             print("Options:\n[1]botstat\n[2]channeldump (dumps channels into a local file)\n[3]userdump (dumps "
                   "userinfo into a local file)\n[4]invade (nukes a server entirely (LOL))\n[41]Delete all channels\n[42]Create 500 channels\n[43]Delete all roles\n[44]Create 250 roles\n[5]Ban a member\n[51]Ban all members\n[52]Unban "
-                  "a member\n[53]Unban ALL members\n[54]List all banned members\n[6]Get Rickrolled\n[7]Leave a guild with the bot\n[71]Leave all guild with the bot")
+                  "a member\n[53]Unban ALL members\n[54]List all banned members\n[6]Get Rickrolled\n[7]Leave a guild with the bot\n[71]Leave all guilds with the bot")
             command = input(">> ")
             if command == "1":
                 botstat()
