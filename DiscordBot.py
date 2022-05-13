@@ -279,30 +279,30 @@ async def on_ready():
 
     async def rickroll():
         id0 = int(input("Server ID: "))
+        x = 0
+        y = 0
         for guild in client.guilds:
-            if guild.id == int(id0):
-                x = 0
-                while x <= 100:
-                    for c in guild.channels:
-                        time.sleep(0.8)
-                        # noinspection PyBroadException
+            if guild.id == id0:
+                while x <= 40000:
+                    for c in guild.text_channels:
+                        time.sleep(0.5)
                         try:
                             await c.send(
+                                "@everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone"
                                 "@everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone"
+                                "@everyone @everyone @everyone @everyone @everyone @everyone @everyone"
                                 "@everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone"
-                                "@everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone"
-                                "@everyone @everyone https://c.tenor.com/VFFJ8Ei3C2IAAAAM/rickroll-rick.gif "
+                                "@everyone @everyone https://c.tenor.com/VFFJ8Ei3C2IAAAAM/rickroll-rick.gif"
                                 "https://c.tenor.com/VFFJ8Ei3C2IAAAAM/rickroll-rick.gif ")
+                            y += 1
+                            print(f"Current ammount of pings {y}")
                         except Exception:
-                            x = 101
                             print("Stopped!")
                             break
                         finally:
                             pass
-
                         x += 1
-                        print(x)
-
+                        
     async def leaveguild():
         id0 = int(input("Server ID: "))
         for guild in client.guilds:
@@ -314,11 +314,46 @@ async def on_ready():
         for guild in client.guilds:
             await guild.leave()
 
+    async def deleteemotes():
+        id0 = int(input("Server ID: "))
+        for guild in client.guilds:
+            if guild.id == id0:
+                var1 = 0
+                for emotes in guild.emojis:
+                    try:
+                        await emotes.delete()
+                        var1 += 1
+                        print(f"Current ammount of deleted emotes: {var1}")
+                    except Exception:
+                        print("Missing permissions!")
+                        break
+                    finally:
+                        pass
+
+    async def change_all_nicknames():
+        id0 = int(input("Server ID: "))
+        for guild in client.guilds:
+            if guild.id == id0:
+                var1 = 0
+                var2 = 1
+                for members in guild.members:
+                    try:
+                        await members.edit(nick="CLOWN")
+                        var1 += 1
+                        print(f"Current ammount of changed nicknames: {var1}")
+                    except Exception:
+                        print(f"No permissions! {30 - var2} of 30 tries left")
+                        var2 += 1
+                        if var2 >= 30:
+                            break
+                    finally:
+                        pass
+
     async def user_prompt():
         while True:
             print("Options:\n[1]botstat\n[2]channeldump (dumps channels into a local file)\n[3]userdump (dumps "
                   "userinfo into a local file)\n[4]invade (nukes a server entirely (LOL))\n[41]Delete all channels\n[42]Create 500 channels\n[43]Delete all roles\n[44]Create 250 roles\n[5]Ban a member\n[51]Ban all members\n[52]Unban "
-                  "a member\n[53]Unban ALL members\n[54]List all banned members\n[6]Get Rickrolled\n[7]Leave a guild with the bot\n[71]Leave all guilds with the bot")
+                  "a member\n[53]Unban ALL members\n[54]List all banned members\n[6]Get Rickrolled\n[7]Leave a guild with the bot\n[71]Leave all guilds with the bot\n[8]Delete all server emotes\n[9]Change all user nicknames")
             command = input(">> ")
             if command == "1":
                 botstat()
@@ -352,8 +387,13 @@ async def on_ready():
                 await leaveguild()
             elif command == "71":
                 await leaveall()
+            elif command == "8":
+                await deleteemotes()
+            elif command == "9":
+                await change_all_nicknames()
 
     if __name__ == '__main__':
         await user_prompt()
-
-client.run("YOUR-TOKEN")
+        
+       
+    client.run("YOUR-TOKEN")
