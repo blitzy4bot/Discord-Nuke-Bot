@@ -10,7 +10,7 @@ A little Discord.py bot script. Please do NOT use it to RAID/NUKE public servers
     > copy your bot "token" and replace it with YOUR-TOKEN in the last line of the Python script (Dont share it with anyone)
     > Head over to "OAuth2" and click on "URL Generator". Tick "bot" and "Administrator" and invite the bot to your server using the generated link
     
-    Finally run DiscordBot.py (requires to have Python installed)
+    Finally run Bot.py or GUI.py (requires to have Python installed)
 
     
 
