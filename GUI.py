@@ -1,5 +1,4 @@
 import PySimpleGUI as sg
-from numba import jit, cuda
 import os
 import discord
 import time
